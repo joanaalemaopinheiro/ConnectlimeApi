@@ -1,3 +1,4 @@
+using ConnectlimeApi.Exercise;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConnectlimeApi.Controllers
@@ -19,15 +20,17 @@ namespace ConnectlimeApi.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public Person Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            Person person = new Person ("John", "x", 123);
+            //person.Name = "Anna";  //cannot write a name
+            //Console.WriteLine(person.NIF); // cannot access the NIF
+            Console.WriteLine("Person:" + person.Name + " NIF: " + person.GetIdentificationNumber());
+
+
+            return person;
+
+            
         }
     }
 }

@@ -14,7 +14,7 @@
         public Company(string email, string name, int nipc)
         {
             Email = email;
-            Name = name; 
+            _name = name; 
             NIPC = nipc;
         }
     }

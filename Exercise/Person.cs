@@ -15,7 +15,7 @@ namespace ConnectlimeApi.Exercise
         public Person(string email, string name, int nif)
         {
             Email = email;
-            Name = name;
+            _name = name;
             NIF = nif;
         }
     }
